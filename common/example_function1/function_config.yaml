@@ -6,6 +6,7 @@ cpu: 0.1
 memory: 0.2
 cdf_project: "accenture-tiger-training"
 cdf_cluster: "api"
+deployment_tenant_id: "e0793d39-0939-496d-b129-198edd916feb"
 metadata:  # optional metadata mapping
   version: "1.0.0"
 # Parameters that are usually not needed to pass (they have good default values):
