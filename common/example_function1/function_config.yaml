@@ -1,16 +1,19 @@
-common_folder: common
+# Note: Parameters can be hardcoded directly in 'deploy-functions.yaml'
+# if you do not need to vary them between your functions!
 description: "This function does an important job. Yes :doge:"
-owner: The Wicked Froge🐸 Team
-cpu: 0.15
-memory: 0.25
+owner: The Awesome Forge Team
+cpu: 0.1
+memory: 0.2
 cdf_project: "accenture-tiger-training"
 cdf_cluster: "api"
-env_vars:
-  cdf_project: "accenture-tiger-training"
-  cdf_cluster: "api"
-
-# Alternatively, env_vars: {"MY_ENV_VAR": "1337", "which_env": "p-p-p-production"}
+metadata:  # optional metadata mapping
+  version: "1.0.0"
 # Parameters that are usually not needed to pass (they have good default values):
 # function_file: handler.py  # Use case: Just don't...
 # function_deploy_timeout: 1500  # Use case: CDF on Azure has slower deployment speed.
 # post_deploy_cleanup: false  # Use case: You want to keep the uploaded zipped code files.
+env_vars:
+  MY_ENV_VAR: "1337"
+  which_env: "p-p-p-production"
+  cdf_project: "accenture-tiger-training"
+  cdf_cluster: "api"

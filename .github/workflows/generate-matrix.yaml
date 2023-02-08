@@ -12,7 +12,7 @@ on:
           List of folders with dependencies (e.g. common) that will
           trigger deployment of all functions if updated.
         type: string
-        required: false
+        required: true
     outputs:
       matrix:
         value: ${{ jobs.generate-matrix.outputs.matrix }}
