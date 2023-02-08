@@ -11,7 +11,6 @@ jobs:
       deploy_folders: >-
         (
         "example_function1"
-        "example_function2"
         )
       trigger_deploy_all_folders: >-
         (
