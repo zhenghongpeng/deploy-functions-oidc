@@ -3,14 +3,18 @@ description: "This function does an important job. Yes :doge:"
 owner: The Wicked Froge🐸 Team
 cpu: 0.15
 memory: 0.25
-env_vars:
-  MY_ENV_VAR: "1337"
-  which_env: "p-p-p-production"
-  cdf_project: ds-cognitefunctions
-  cdf_cluster: westeurope-1
-  deployment_client_id: 1c224c70-1df2-4f05-964a-753a6731748a
-  deployment_tenant_id: 48d5043c-cf70-4c49-881c-c638f5796997
-  deployment_client_secret: ${{secrets.DEPLOYMENT_CLIENT_SECRET}}
+
+cdf_project: "accenture-tiger-training"
+cdf_cluster: "api"
+# env_vars:
+#   MY_ENV_VAR: "1337"
+#   which_env: "p-p-p-production"
+#   cdf_project: ds-cognitefunctions
+#   cdf_cluster: westeurope-1
+#   deployment_client_id: 1c224c70-1df2-4f05-964a-753a6731748a
+#   deployment_tenant_id: 48d5043c-cf70-4c49-881c-c638f5796997
+#   deployment_client_secret: ${{secrets.DEPLOYMENT_CLIENT_SECRET}}
+
 
 # Alternatively, env_vars: {"MY_ENV_VAR": "1337", "which_env": "p-p-p-production"}
 # Parameters that are usually not needed to pass (they have good default values):

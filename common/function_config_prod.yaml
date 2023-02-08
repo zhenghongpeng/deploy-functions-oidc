@@ -1,7 +1,3 @@
 # Configuration file for dev environment. Will apply to all functions, but will be overwritten by
 # configurations files in specific function folder.
-schedules_tenant_id: 0d75f6b8-c6b9-4e84-baca-503e08aa7e4a
-cdf_project: ds-cognitefunctions
-cdf_cluster: westeurope-1
-deployment_client_id: 1c224c70-1df2-4f05-964a-753a6731748a
-deployment_tenant_id: 48d5043c-cf70-4c49-881c-c638f5796997
+data_set_id: 4972094093286445

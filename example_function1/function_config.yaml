@@ -4,7 +4,10 @@ description: "This function does an important job. Yes :doge:"
 owner: The Awesome Forge Team
 cpu: 0.1
 memory: 0.2
-deployment_tenant_id: 48d5043c-cf70-4c49-881c-c638f5796997
+cdf_project: "accenture-tiger-training"
+cdf_cluster: "api"
+
+#deployment_tenant_id: 48d5043c-cf70-4c49-881c-c638f5796997
 metadata:  # optional metadata mapping
   version: "1.0.0"
 # Parameters that are usually not needed to pass (they have good default values):
@@ -12,10 +15,5 @@ metadata:  # optional metadata mapping
 # function_deploy_timeout: 1500  # Use case: CDF on Azure has slower deployment speed.
 # post_deploy_cleanup: false  # Use case: You want to keep the uploaded zipped code files.
 env_vars:
-  MY_ENV_VAR: "1337"
-  which_env: "p-p-p-production"
-  cdf_project: ds-cognitefunctions
-  cdf_cluster: westeurope-1
-  deployment_client_id: 1c224c70-1df2-4f05-964a-753a6731748a
-  deployment_tenant_id: 48d5043c-cf70-4c49-881c-c638f5796997
-  deployment_client_secret: ${{secrets.DEPLOYMENT_CLIENT_SECRET}}
+  cdf_project: "accenture-tiger-training"
+  cdf_cluster: "api"
