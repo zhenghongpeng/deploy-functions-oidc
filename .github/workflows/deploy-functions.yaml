@@ -80,6 +80,14 @@ jobs:
           echo "extra_secrets_name=EXTRA_SECRETS_${{ matrix.function }}" >> $GITHUB_OUTPUT
         id: extract_secrets
 
+      - name: Echo envs
+        if: ${{ contains(needs.generate-matrix.outputs.deploy_folders, matrix.function) }}
+        shell: bash
+        # Secret name should be EXTRA_SECRETS_{function name} (if applicable)
+        run: |
+          echo $GITHUB_OUTPUT
+        id: extract_secrets
+
       - name: Deploy and schedule ${{matrix.function }}
         if: ${{ contains(needs.generate-matrix.outputs.deploy_folders, matrix.function) }}
         uses: cognitedata/function-action-oidc@v1
@@ -101,7 +109,7 @@ jobs:
           cdf_cluster: ${{ steps.extract_params.outputs.cdf_cluster }}
           data_set_id: ${{ steps.extract_params.outputs.data_set_id }}
           schedules_tenant_id: ${{ steps.extract_params.outputs.tenant_id }}
-          deployment_tenant_id: ${{ steps.extract_params.outputs.tenant_id }}
+          deployment_tenant_id: ${{ secrets.DEPLOYMENT_TENANT_ID }}
           common_folder: ${{ steps.extract_params.outputs.common_folder }}
           function_deploy_timeout: ${{ steps.extract_params.outputs.function_deploy_timeout }}
           post_deploy_cleanup: ${{ steps.extract_params.outputs.post_deploy_cleanup }}
