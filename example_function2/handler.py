@@ -9,7 +9,6 @@ def handle(data, client):
         raise KeyError("Data should contain both keys: 'a' and 'b'")
 
     data["sum"] = sum_integers(data["a"], data["b"])
-
     print("Will now return updated data")
 
     return data
