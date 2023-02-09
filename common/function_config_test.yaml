@@ -1,2 +1,3 @@
 # Configuration file for dev environment. Will apply to all functions, but will be overwritten by
 # configurations files in specific function folder.
+data_set_id: 1686761944416218
