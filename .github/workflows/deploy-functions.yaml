@@ -107,7 +107,7 @@ jobs:
           cdf_project: ${{ steps.extract_params.outputs.cdf_project }}
           cdf_cluster: ${{ steps.extract_params.outputs.cdf_cluster }}
           data_set_id: ${{ steps.extract_params.outputs.data_set_id }}
-          schedules_tenant_id: ${{ steps.extract_params.outputs.tenant_id }}
+          schedules_tenant_id: ${{ secrets.DEPLOYMENT_TENANT_ID }}
           deployment_tenant_id: ${{ secrets.DEPLOYMENT_TENANT_ID }}
           common_folder: ${{ steps.extract_params.outputs.common_folder }}
           function_deploy_timeout: ${{ steps.extract_params.outputs.function_deploy_timeout }}
