@@ -85,8 +85,7 @@ jobs:
         shell: bash
         # Secret name should be EXTRA_SECRETS_{function name} (if applicable)
         run: |
-          echo $GITHUB_OUTPUT
-        id: extract_secrets
+          cat $GITHUB_OUTPUT
 
       - name: Deploy and schedule ${{matrix.function }}
         if: ${{ contains(needs.generate-matrix.outputs.deploy_folders, matrix.function) }}
