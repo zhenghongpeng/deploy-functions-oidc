@@ -23,6 +23,7 @@ def handle(client, data=None, secrets=None, function_call_info=None):
     feature_name_list = file_obj.metadata["feature_list"].split(";")
 
     # load the model into memory
+    print("prediction in process.")
     loaded_model = pickle.loads(client.files.download_bytes(id=file_obj.id))
     # make the response serializable
     predictions = loaded_model.predict(data[feature_name_list]).tolist()
