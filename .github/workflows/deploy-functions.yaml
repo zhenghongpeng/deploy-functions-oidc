@@ -10,8 +10,9 @@ jobs:
     with:
       deploy_folders: >-
         (
-        "example_function1"
-        "example_function2"
+        # "example_function1"
+        # "example_function2"
+        well8532_function
         )
       trigger_deploy_all_folders: >-
         (
