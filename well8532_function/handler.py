@@ -1,6 +1,3 @@
-import pickle
-
-
 def handle(client, data=None, secrets=None, function_call_info=None):
     """Handler Function for failure prediction
     Args:
@@ -18,14 +15,20 @@ def handle(client, data=None, secrets=None, function_call_info=None):
     [/requirements]
     """
 
-    # download model
-    file_obj = client.files.retrieve(external_id="rfc_model_rop_well5832")
-    feature_name_list = file_obj.metadata["feature_list"].split(";")
+    #download model 
+    file_obj =  client.files.retrieve(external_id="rfc_model_rop_well5832")
+    feature_name_list = file_obj.metadata['feature_list'].split(";")
+    
+    print(feature_name_list)
+    # load data
+    print("input data {}".format(data))
+    
+    df = client.sequences.data.retrieve_dataframe(external_id=data["external_id"],start=data["start"],end=data["end"])
+    
 
     # load the model into memory
-    print("prediction in process.")
     loaded_model = pickle.loads(client.files.download_bytes(id=file_obj.id))
     # make the response serializable
-    predictions = loaded_model.predict(data[feature_name_list]).tolist()
+    predictions = loaded_model.predict(df[feature_name_list]).tolist()
 
     return predictions
