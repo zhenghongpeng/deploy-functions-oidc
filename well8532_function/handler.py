@@ -25,10 +25,8 @@ def handle(client, data=None, secrets=None, function_call_info=None):
     
     df = client.sequences.data.retrieve_dataframe(external_id=data["external_id"],start=data["start"],end=data["end"])
     
-
     # load the model into memory
     loaded_model = pickle.loads(client.files.download_bytes(id=file_obj.id))
     # make the response serializable
     predictions = loaded_model.predict(df[feature_name_list]).tolist()
-
     return predictions
