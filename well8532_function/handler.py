@@ -1,3 +1,5 @@
+import pickle
+
 def handle(client, data=None, secrets=None, function_call_info=None):
     """Handler Function for failure prediction
     Args:
